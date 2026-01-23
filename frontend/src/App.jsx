@@ -5,11 +5,13 @@ import CreatePage from './pages/CreatePage'
 import NoteDetailPage from './pages/NoteDetailPage'
 import toast from 'react-hot-toast'
 
+
+
 const App = () => {
   return (
     <div>
 
-      <button onClick={() => toast.success("congrats")}>click me</button>
+      <button className="text-4xl font-bold text-blue-500" onClick={() => toast.success("congrats")}>click me</button>
 
       <Routes>
         <Route path="/" element={<Homepage />} />
