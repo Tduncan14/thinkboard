@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router';
 import { ArrowLeftIcon } from 'lucide-react'
 import toast from 'react-hot-toast';
 import axios from 'axios';
+import api from '../lib/axios';
 
 const CreatePage = () => {
 
@@ -26,7 +27,7 @@ const CreatePage = () => {
 
 
         try {
-            await axios.post("http://localhost:5001/api/notes", {
+            await api.post("/notes", {
                 title,
                 content
             })
@@ -39,7 +40,11 @@ const CreatePage = () => {
 
         catch (err) {
 
-            toast.error("Failed to create note!")
+            toast.error("Failed to create note!", err)
+
+            if (err.response.status === 429) {
+                toast.error("Too many request, slow down");
+            }
         }
 
         finally {

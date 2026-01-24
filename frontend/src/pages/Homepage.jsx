@@ -4,6 +4,7 @@ import Ratedlimited from '../components/Ratedlimited'
 import NoteCard from '../components/NoteCard'
 import axios from 'axios'
 import toast from 'react-hot-toast'
+import api from '../lib/axios'
 
 const Homepage = () => {
 
@@ -19,7 +20,7 @@ const Homepage = () => {
 
             try {
 
-                const res = await axios.get("http://localhost:5000/api/notes")
+                const res = await api.get("/notes")
                 console.log(res.data, 'this is the data')
                 // const res = await fetch('http://localhost:5001/api/notes')
                 // const data = await res.json()
