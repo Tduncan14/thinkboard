@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react'
 import Navbar from '../components/Navbar'
 import Ratedlimited from '../components/Ratedlimited'
-import NoteCard from '../components/NoteCard'
+import NoteCard from '../components/NoteCard.jsx'
 import axios from 'axios'
 import toast from 'react-hot-toast'
-import { Notesnotfound } from '../components/Notesnotfound'
+import Notesnotfound from '../components/Notesnotfound.jsx'
 import api from '../lib/axios'
 
 const Homepage = () => {
